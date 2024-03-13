@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* base */
+
+@font-face {
+  font-family: 'SF UI Text Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Text Regular'), url('/assets/fonts/SFUIText-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'SF UI Text Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Text Bold'), url('/assets/fonts/SFUIText-Bold.woff') format('woff');
+}
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+body{
+  /*background-image: url('../imgs/spacebg.jpg');*/
+  background-attachment: fixed;
+  overflow: scroll;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.23) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: .5vw;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.23);
+  border-radius: 1vw;
+}
+
+

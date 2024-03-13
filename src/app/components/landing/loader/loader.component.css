@@ -1,0 +1,56 @@
+
+.loader{
+  position: fixed;
+
+  padding-right: 3vw;
+  padding-left: 3vw;
+
+  z-index: 4;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    135deg,
+    hsl(240deg 100% 5%) 0%,
+    hsl(240deg 100% 5%) 8%,
+    hsl(0deg 0% 0%) 100%
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*
+  transform: translateX(-3vw);
+  */
+  will-change: transform;
+
+
+}
+
+
+.loader{
+  position:fixed;
+  will-change: transform;
+}
+
+.logo-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.loader-circle-rotate{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+
+  animation: rotate 4s infinite linear;
+  will-change: transform;
+
+}
+
+
+
+
