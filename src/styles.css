@@ -22,7 +22,6 @@
 body{
   /*background-image: url('../imgs/spacebg.jpg');*/
   background-attachment: fixed;
-  overflow: scroll;
 }
 
 * {
