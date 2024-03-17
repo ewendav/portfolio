@@ -14,7 +14,7 @@ import {NavigationEnd, NavigationStart, Router} from "@angular/router";
   styleUrl: './loader.component.css',
   animations: [trigger('killComponent', [
     transition(':leave',
-        animate('700ms 300ms ease',style({bottom:'-110%'}))
+        animate('1s 300ms ease',style({bottom:'-110%'}))
       ),
     ]),
   ]
@@ -34,6 +34,8 @@ export class LoaderComponent implements OnInit, AfterViewInit {
 
   loadingTime : number = 0;
   loadingTimerInterval : any;
+
+  eventLoaderGone = new CustomEvent('loaderGone')
 
   unSubscribeRouter$ : Subject<void> = new Subject<void>
 
@@ -58,7 +60,7 @@ export class LoaderComponent implements OnInit, AfterViewInit {
         }else{
           setTimeout(()=>{
             this.fnPageLoaded();
-          },2000)
+          },1)
         }
       }
     });
@@ -102,6 +104,7 @@ export class LoaderComponent implements OnInit, AfterViewInit {
       this.killComponent = true
       setTimeout(()=>{
         this.stopAnimation = true
+        document.dispatchEvent(this.eventLoaderGone)
       },500)
     },500)
 

@@ -1,0 +1,480 @@
+/* header start */
+
+header{
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+  height: 4vw;
+
+}
+
+.header-logo{
+  width: auto;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.bracket1 {
+  position: absolute;
+  height: 7.5vw;
+  width: auto;
+  transform: translateX(-7.6vw);
+  will-change: transform;
+  z-index: 3;
+}
+
+.bracket2 {
+  position: absolute;
+  height: 7.5vw;
+  transform: translateX(-4.6vw);
+  will-change: transform;
+  z-index: 1;
+}
+
+
+.name-container {
+  overflow: hidden;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+.name {
+  height: 5vw;
+  width: auto;
+  z-index: 2;
+  transform: translateX(-15.5vw);
+  will-change: transform;
+}
+
+
+/* header end */
+
+/* hero start */
+
+.hero{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3vw;
+}
+
+.hero-left{
+  height: 38vw;
+}
+
+.draggable {
+  z-index: 1000;
+  position: absolute;
+}
+
+
+.win98-border{
+  font-family: "Pixelated MS Sans Serif", Arial, serif;
+  -webkit-font-smoothing: none;
+  background: silver;
+  box-shadow: inset -1px -1px #0a0a0a,inset 1px 1px #fff,
+  inset -2px -2px grey,inset 2px 2px #dfdfdf;
+  padding: 5px;
+}
+
+.win98-header {
+  min-height: 1.1vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: .2vw;
+  padding-bottom: .2vw;
+  background: linear-gradient(90deg,navy,#1084d0);
+  margin-bottom: 1vw;
+  font-family: "pixel ms bold", Arial, serif;
+
+  color: white;
+  font-size: min(14px,.9vw);
+  cursor: grab;
+}
+
+.win98-header:active{
+  cursor: grabbing;
+}
+
+.win98-header > p{
+  padding-left: .4vw;
+}
+
+.win98-small-button{
+  height: 1.1vw;
+  width: 1.1vw;
+  margin-right: .2vw;
+}
+
+.win98-button{
+  cursor: pointer;
+}
+
+.win98-button:not(:disabled):active {
+  box-shadow: inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px grey;
+}
+
+.win98-button:not(:disabled):focus-visible {
+  outline: none;
+}
+
+.win98-interrogationMark{
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='6' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M0 1h2v2H0zM1 0h4v1H1zM4 1h2v2H4zM3 3h2v1H3zM2 4h2v2H2zM2 7h2v2H2z'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.win98-resetButton{
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 500ms;
+  background-image: url("/assets/imgs/landing/hero/reset-ico.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.game{
+  width: 90%;
+  height: 100%;
+  background-image: linear-gradient(
+    135deg,
+    hsl(240deg 100% 5%) 0%,
+    hsl(240deg 100% 5%) 8%,
+    hsl(0deg 0% 0%) 100%
+  );
+  box-shadow: inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;
+  margin: 0;
+  padding: 12px 8px;
+}
+
+.instructions-window{
+  top: 3vw;
+  left: 5vw;
+  visibility: hidden;
+}
+
+.game-advice-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: end;
+  width: 100%;
+  height: 25vw;
+  font-family: monospace;
+  font-size: 1.2vw;
+  text-align: center;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 5vw;
+}
+
+.ai1 {
+  position: absolute;
+  width: 2vw;
+  height: auto;
+  right: 18.8vw;
+  bottom: 3.5vw;
+  animation: 1.3s linear 1s infinite alternate forwards running showHide;
+}
+
+.ai2 {
+  position: absolute;
+  width: 2vw;
+  height: auto;
+  right: 32.35vw;
+  bottom:  3.5vw;
+  animation: showHide 1.3s linear 1s infinite alternate forwards running ;
+}
+
+.ai3 {
+  position: absolute;
+  width: 1.5vw;
+  height: auto;
+  right: 6vw;
+  bottom:  3.5vw;
+  animation: 1.3s linear 1s infinite alternate forwards running showHide;
+}
+
+@keyframes showHide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.play-with {
+  font-family: monospace;
+  color: white;
+  font-size: 1.2vw;
+  position: absolute;
+  bottom: 8.5vw;
+  right: 20vw;
+}
+
+.arrowkeys {
+  position: absolute;
+  width: 7vw;
+  height: auto;
+  right: 12vw;
+  bottom: 6.5vw;
+}
+
+.win98-close{
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E");
+  background-position: top .25vw left .2vw;
+  background-repeat: no-repeat;
+}
+
+.blink{
+  animation: 1.3s linear 1s infinite alternate forwards running showHide;
+}
+
+/* hero right */
+
+.hero-right{
+ display: grid;
+  grid-template-rows: .8fr 1.4fr .8fr;
+}
+
+.hello-box{
+  height: 6vw;
+  width: 13vw;
+}
+
+.hello-box-dummy-container{
+  height: 6vw;
+  width: 13vw;
+}
+
+.hello-world-button{
+  padding: .6vw .8vw;
+  font-size: .7vw;
+}
+
+.hello-world-globe{
+  height: 2.8vw;
+  width: auto;
+  position: absolute;
+  left: .8vw;
+  top: 2.4vw;
+}
+
+.invader{
+  width: 3.5vw;
+  position: absolute;
+  z-index: -1;
+}
+
+.invA{
+  top: 1.9vw;
+  right: -1.2vw;
+  transform: rotate(90deg);
+  transition: right 1s ease;
+  will-change: right;
+}
+
+.invB{
+  bottom: -1.2vw;
+  left: 2vw;
+  transform: rotate(180deg);
+  transition: bottom 1s ease;
+  will-change: bottom;
+
+}
+
+.invC{
+  width: 2.5vw;
+  top: -.6vw;
+  right: 2vw;
+  transition: top 1s ease;
+  will-change: top;
+
+}
+
+.invC2, .invB2, .invA2{
+  opacity: 0;
+}
+
+.invA2{
+  right: -2.7vw;
+}
+.invB2{
+   bottom: -2.9vw;
+ }
+.invC2{
+    top: -2.5vw;
+  }
+
+.instructions-text{
+  font-family: "pixel ms", Arial, serif;
+  font-size: .9vw;
+  padding-left: 1.5vw;
+}
+
+
+
+/* heading hero */
+
+.hero-name {
+  font-size: 4vw;
+  margin-bottom: .5vw;
+}
+
+.hero-subtitle{
+  font-size: 2.3vw;
+  color: whitesmoke;
+  font-family: "SF UI Text Regular", serif;
+  margin-bottom: .8vw;
+}
+
+.hero-text-container{
+  font-size: 1.3vw;
+  color: whitesmoke;
+  font-family: "SF UI Text Regular", serif;
+  text-align: center;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  z-index: -1;
+}
+
+.text-angular-gradient{
+  background-image: linear-gradient( 90deg, oklch(63.32% .24 31.68) 0%, oklch(69.02% .277 332.77) 50%, oklch(53.18% .28 296.97) 100% );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: "SF UI Text Bold", serif;
+}
+
+.laravel-text-color{
+  color : #f9322c ;
+  font-family: "SF UI Text Bold", serif;
+}
+
+.text-angular-gradient > img, .laravel-text-color > img{
+  width: 1.5vw;
+}
+.text-angular-gradient, .laravel-text-color{
+  display: inline-flex;
+  gap: .25vw;
+}
+
+.hero-languages{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vw;
+}
+
+.vertical-text-divider{
+  position: absolute;
+  background-color: #fff;
+  width: .05vw;
+  height: 3vw;
+  top: 0;
+  left: .9vw;
+}
+
+
+.scroll-or-shoot-container{
+  height: 12vw;
+  width: 39vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.scroll-text-container {
+  display: flex;
+  width: 90%;
+  position: relative;
+}
+.scroll-text {
+  width: auto;
+  height: 4.5vw;
+}
+.scroll {
+  height: 2vw;
+  width: auto;
+  position: absolute;
+  left: 16vw;
+  top: -1vw;
+  will-change: transform;
+  animation: scroller 900ms infinite alternate;
+}
+
+@keyframes scroller {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0.5vw);
+  }
+}
+
+.or-shoot {
+  width: auto;
+  height: 5.8vw;
+  bottom: 0;
+  position: absolute;
+}
+.or-shoot-container {
+  display: flex;
+  justify-content: end;
+  align-items: start;
+  width: 90%;
+  height: 40%;
+  position: relative;
+}
+
+.or-shoot {
+  width: auto;
+  height: 5.8vw;
+  bottom: 0;
+  position: absolute;
+}
+
+.bullet-container {
+  position: absolute;
+  height: 2vw;
+  width: 8vw;
+  right: 2vw;
+  top: -1vw;
+  z-index: -1;
+  overflow: hidden;
+}
+.bullet {
+  background-color: cyan;
+  width: 2vw;
+  height: 0.35vw;
+  border-radius: 1vw;
+  transform: translateX(1vw);
+  position: absolute;
+  top: .8vw;
+  left: -3vw;
+  will-change: transform;
+  animation: 2.3s ease-out 0s infinite normal none running bulletShoot;
+}
+
+@keyframes bulletShoot {
+  0% {
+  }
+
+  100% {
+    transform: translateX(11vw);
+  }
+}
+
+
+/* hero end */
