@@ -1,0 +1,46 @@
+
+.container{
+  width: 4vw;
+  height: 4vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  transform: translate(calc(-50% + 15px), -50%);
+  will-change: transform;
+  transition: transform 100ms;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.svg{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7vw;
+  height: auto;
+}
+
+.path{
+  fill: transparent;
+  stroke: antiquewhite;
+  stroke-width: .1vw;
+  will-change: stroke-dasharray;
+  stroke-dasharray: 1000;
+  transition  : scale 500ms;
+}
+
+.text-container{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  position: absolute;
+}
+
+.main-text{
+  color: black;
+  font-size: 1.5vw;
+  font-family: "SF Light", serif;
+}

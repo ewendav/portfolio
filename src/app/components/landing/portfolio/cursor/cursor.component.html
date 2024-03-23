@@ -1,0 +1,23 @@
+<div [style.transform]="cursorTransformValue" class="container flex-row">
+  <svg
+    [@mouseDown]="dataService.mouseDown"
+    class="svg flex-row" viewBox="0 0 100 100">
+    <path
+      [@dashAnimation]="animationState"
+      [class.mouseDown]="dataService.mouseDown"
+      class="path" d="M50,10
+           a 40,40 0 1,1 0,80
+           a 40,40 0 1,1 0,-80"
+    />
+  </svg>
+  <p class="text-container flex-row">
+    <span
+      class="main-text "
+          [@textAnimation]="animationState"
+    >
+      {{text}}
+    </span>
+  </p>
+</div>
+
+

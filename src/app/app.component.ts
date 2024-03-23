@@ -8,7 +8,10 @@ import {LoaderComponent} from "./components/landing/loader/loader.component";
   standalone: true,
   imports: [RouterOutlet, LoaderComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  animations : [
+    
+  ]
 })
 export class AppComponent {
 

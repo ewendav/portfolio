@@ -1,0 +1,25 @@
+<div #itemEl class="item">
+  <div class="text-container">
+    <h3 class="title" >{{title}}</h3>
+  </div>
+
+  <div class="img-container">
+    <div #spacerUp
+         [@spacerUp]="showImage"
+         class="spacer up"></div>
+    <div
+      [class.itemOpen]="itemOpen"
+      [@img]="showImage"
+      (@img.start)="onAnimationEvent($event)"
+      (@img.done)="onAnimationEvent($event)"
+      #img [style]="'background-image:url(' + bcImgSrc + ');'" class="img" ></div>
+
+    <div #spacerDown
+         [@spacerDown]="showImage"
+         class="spacer down"></div>
+  </div>
+
+  <app-project *ngIf="true"></app-project>
+
+
+</div>

@@ -11,8 +11,10 @@ export function startGame(){
   ctx = canvas.getContext("2d");
 
   const gameContainer = document.querySelector(".game-container");
-  canvas.width=gameContainer.getBoundingClientRect().width;
-  canvas.height=gameContainer.getBoundingClientRect().height;
+  canvas.width='708';
+  canvas.height='603';
+
+  console.log(canvas.width, canvas.height)
 
   observerGame.observe(canvas)
   observerBarreGame.observe(canvas)
@@ -146,6 +148,8 @@ class invader {
       this.image = image;
       this.width = image.width * this.scale;
       this.height = image.height * this.scale;
+      if(this.race === "A")
+      console.log(this.width, this.height)
     };
 
     switch (race) {
@@ -388,6 +392,7 @@ let observerGame = new IntersectionObserver((entries)=>{
     if(entrie.isIntersecting){
       watchingGame=true
       loadImages()
+      toggleAnimation(true)
     }
   })
 }, {threshold: .30})
@@ -396,10 +401,24 @@ let observerBarreGame = new IntersectionObserver((entries)=>{
   entries.forEach(entrie=>{
     if(!entrie.isIntersecting){
       watchingGame=false
+      toggleAnimation(false)
+
     }
   })
 }, {threshold: .30})
 
+
+function toggleAnimation(state){
+let elToStop = document.querySelectorAll('img.name, .scroll, .bullet, .advice-invaders, .arrowkeys, .play-with')
+  if(state){
+    elToStop.forEach((el)=>{
+      el.style.display = 'block'
+    })
+  }else{
+    elToStop.forEach((el)=>{
+      el.style.display = 'none'
+    })  }
+}
 
 
 let blinkDestroyed = false

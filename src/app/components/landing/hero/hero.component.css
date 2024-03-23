@@ -59,6 +59,9 @@ header{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3vw;
+  margin-inline: 7vw;
+  margin-bottom: 100vw;
+
 }
 
 .hero-left{
@@ -150,6 +153,7 @@ header{
   box-shadow: inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;
   margin: 0;
   padding: 12px 8px;
+
 }
 
 .instructions-window{
@@ -323,6 +327,10 @@ header{
 
 /* heading hero */
 
+.hero-heading{
+  margin-top: 1vw;
+}
+
 .hero-name {
   font-size: 4vw;
   margin-bottom: .5vw;
@@ -410,7 +418,7 @@ header{
   left: 16vw;
   top: -1vw;
   will-change: transform;
-  animation: scroller 900ms infinite alternate;
+  animation: scroller 1150ms infinite alternate;
 }
 
 @keyframes scroller {

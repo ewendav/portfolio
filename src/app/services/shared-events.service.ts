@@ -1,38 +1,67 @@
-import { Injectable } from '@angular/core';
-import {Observable, Subject} from "rxjs";
+import {Injectable, QueryList, Renderer2} from '@angular/core';
+import {BehaviorSubject, Observable, Subject} from "rxjs";
+import {
+  PortfolioItemImgComponent
+} from "../components/landing/portfolio/portfolio-item-img/portfolio-item-img.component";
+
+class InfoItemImg{
+  public isAnimating : boolean = false;
+  public isOpen : boolean = false;
+  public isMouseOver : boolean = false;
+  constructor(public title : string){}
+}
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedEventsService {
 
+  public allItemsImg!: QueryList<PortfolioItemImgComponent>
 
-  helloWindowDraggedSubject : Subject<boolean> = new Subject<boolean>
-  helloWindowDragged$ : Observable<boolean> = this.helloWindowDraggedSubject.asObservable();
-  gameWindowDraggedSubject : Subject<boolean> = new Subject<boolean>
-  gameWindowDragged$ : Observable<boolean> = this.gameWindowDraggedSubject.asObservable();
+  public mouseUp : boolean  =false
+  public mouseDown : boolean  =false
 
-  helloWindowResetSubject : Subject<boolean> = new Subject<boolean>
-  helloWindowReset$ : Observable<boolean> = this.helloWindowDraggedSubject.asObservable();
-  gameWindowResetSubject : Subject<boolean> = new Subject<boolean>
-  gameWindowReset$ : Observable<boolean> = this.gameWindowDraggedSubject.asObservable();
-  constructor() { }
-
-  sendWindowDragged(status : boolean, name : string){
-    if(name === 'game'){
-      this.gameWindowDraggedSubject.next(status)
-    }else{
-      this.helloWindowDraggedSubject.next(status)
-    }
+  setAllItemImg(allItem : QueryList<PortfolioItemImgComponent>){
+    this.allItemsImg = allItem;
   }
 
-
-  resetWindow(name : string){
-    if(name === 'game') {
-      this.gameWindowResetSubject.next(true)
-    }else{
-      this.helloWindowResetSubject.next(true)
-    }
+  public noImgAnimatingSubj : Subject<any> = new Subject<any>()
+  public noImgAnimating$ = this.noImgAnimatingSubj.asObservable();
+  imgIsAnimating(){
+      this.noImgAnimatingSubj.next(true)
   }
+
+  public imageHoverSubj : Subject<any> = new Subject<any>()
+  public imageHover$ = this.imageHoverSubj.asObservable();
+  imageHover(value : boolean){
+    this.imageHoverSubj.next(value);
+  }
+
+  areAllImgsDown(){
+    return !this.allItemsImg.some(img => img.animationRunning || img.showImage)
+  }
+
+  areAllAnimationFinish(){
+    return !this.allItemsImg.some(img => img.animationRunning)
+  }
+  changeItemState(title : string, state : boolean){
+    if(state){
+      this.allItemsImg.forEach((item)=>{
+        if(item.title !== title){
+          item.itemEl.nativeElement.style.width = '0'
+        }else{
+          item.itemEl.nativeElement.style.width = '100vw'
+        }
+      })
+    }else{
+      this.allItemsImg.forEach((item)=>{
+        item.itemEl.nativeElement.style.width = '25vw'
+
+      })
+    }
+
+  }
+
 
 }

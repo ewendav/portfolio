@@ -109,9 +109,7 @@ export class HeroComponent implements AfterViewInit{
 
   @HostListener('document:loaderGone')
   onPageShow(){
-    console.log('gone')
-
-    if(this.headerNameElement && this.headerNameElement){
+    if(this.headerNameElement && this.headerBracketElement2){
       this.headerNameElement.nativeElement.style.animation = 'name 1s 200ms forwards';
         this.headerBracketElement2.nativeElement.style.animation ='bracket2 2s 1s forwards ';
 

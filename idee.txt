@@ -16,6 +16,30 @@ indices sdans le term
 dossier trophées en haut a gauche icone dossier
 
 
-a faire
+================== a faire ===============================
 
-dummy contrainer game
+dummy contrainer game | FAIT
+spinner portfolio iutem img avant image show | FAIT
+réduire taille intrinsèque image  | FAIT
+enlevber event mousemove intersection ovserver portfiolio | FAIT
+stop anims hero qd plus surt la hero | FAIT
+taillen image iunvader | FAIT
+
+
+
+resoudre pb gliding ship blocké
+
+
+scroll guidé assisté pour portfolio arrivé a botttom 0 seciton
+smooth scroll lenis
+
+son click savoirfaire.nyc
+
+
+https://studiofreight.com/ info idea
+
+
+fenêtre ouverte sur l'uinivers
+poour toute deamnde de contact toquez   après glass morphisme en mode searchy bar 
+
+gainy texture css

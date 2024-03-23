@@ -1,0 +1,84 @@
+
+.item{
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: end;
+  position: relative;
+  width: 25vw;
+  height: 100%;
+  overflow: hidden;
+  border-left: white solid 1px;
+  will-change: width;
+  transition: width 1s ease-in-out;
+  cursor: none;
+}
+
+/* txt */
+
+.text-container{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 3vw;
+  z-index: 100;
+}
+
+.title{
+  font-family: "SF Thin", serif;
+  font-size: 3vw;
+  color: white;
+  width: 2vw;
+  opacity: 0;
+}
+
+/* imgs */
+
+.img-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.spacer{
+  width: 100%;
+}
+
+.spacer.up{
+  height: 100%;
+}
+
+.spacer.down{
+  height: 0;
+}
+
+
+.img{
+  width: 105vw;
+  height: 0;
+  content: '';
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: contain;
+  transition: height 600ms ease-in-out;
+}
+
+.showTitles{
+  animation: showTitles 1s ease-in-out forwards;
+}
+
+@keyframes showTitles  {
+  from{
+    opacity: 0;
+    transform: translateY(2vw);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0vw);
+  }
+}

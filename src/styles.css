@@ -14,6 +14,18 @@
   src: local('SF UI Text Bold'), url('/assets/fonts/SFUIText-Bold.woff') format('woff');
 }
 @font-face {
+  font-family: 'SF Thin';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF Thin'), url('/assets/fonts/sf-ui-thin.woff') format('woff');
+}
+@font-face {
+  font-family: 'SF Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF Thin'), url('/assets/fonts/sf-ui-light.woff') format('woff');
+}
+@font-face {
   font-family: 'pixel ms';
   font-style: normal;
   font-weight: normal;
@@ -52,7 +64,6 @@
 
 body{
   background-attachment: fixed;
-  margin-inline: 7vw;
   background-image: linear-gradient(
     135deg,
     hsl(240deg 100% 5%) 0%,
