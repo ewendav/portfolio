@@ -40,6 +40,39 @@ https://studiofreight.com/ info idea
 
 
 fenêtre ouverte sur l'uinivers
-poour toute deamnde de contact toquez   après glass morphisme en mode searchy bar 
+poour toute deamnde de contact toquez   après glass morphisme en mode searchy bar
+  SORTIR  de la fenêtre l'univers est en son seins
 
 gainy texture css
+
+
+make return button work on prokects
+
+auto scroll restauration manual
+
+
+
+
+<svg class="game-container" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.2812 91.157883"  >
+       <defs>
+         <clipPath id="mask">
+           <path
+             d="M 0 0 L 0 71.38 C 0 74.687 2.681 77.368 5.988 77.368 L 60.131 77.368 L 78.901 77.368 L 167.025 77.368 C 170.332 77.368 173.013 74.687 173.013 71.38 L 173.013 48.026 L 90.877 48.026 C 87.57 48.026 84.889 45.345 84.889 42.037 L 84.889 5.988 C 84.889 2.681 82.208 0 78.901 0 L 0 0 Z" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -1.4210854715202004e-14, 0)"
+         />
+         </clipPath>
+       </defs>
+
+       <foreignObject clip-path="url(#mask)" width="100%" height="100%">
+         <div class="glass"></div>
+       </foreignObject>
+     </svg>
+
+     .glass{
+       width:100%;
+       height: 100%;
+       clip-path: url(#pathClip);
+       background-color: rgba(13, 162, 176, 0);
+       backdrop-filter: blur(2px);
+     }
+
+     refermler en window rezize

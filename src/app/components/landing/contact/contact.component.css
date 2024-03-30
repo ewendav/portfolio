@@ -1,0 +1,129 @@
+section{
+  height: 85vh;
+  width: 100%;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.terminal {
+  background-color: #00181ab8;
+  height: 22vw;
+  width: 43vw;
+  border-radius: 15px 15px 15px 15px;
+  position: relative;
+  padding-bottom: .7vw;
+}
+
+
+.terminal-header{
+  background-color: #292929;
+  height: 2.1vw;
+  border-radius: 15px 15px 0 0;
+  position: relative;
+  font-size: .8vw;
+  color: white;
+  font-family: monospace;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 1vw;
+}
+
+.terminal-ico {
+  left: .5vw;
+  top: .5vw;
+  height: 1.1vw;
+  width: auto;
+}
+
+.lin-ico {
+  right: .5vw;
+  width: 4vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+.round {
+  border: .12vw solid rgb(0, 0, 0);
+  border-radius: 50%;
+  background-color: #4f4f4f;
+  height: .9vw;
+  width: .9vw;
+  bottom: .04vw;
+  position: relative;
+
+}
+
+.cross {
+  background-color: rgb(0, 207, 207);
+  color: black;
+  text-align: center;
+}
+
+
+.terminal-content {
+  padding-bottom: 0.2vw;
+  display: flex;
+  height: 18vw;
+  flex-direction: column;
+  padding-top: 0.2vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(83, 83, 83) transparent;
+}
+
+
+
+.prompt {
+  color: cyan;
+}
+
+
+.terminal-input {
+  margin-left: 0.2vw;
+  width: 77.5%;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  background-color: transparent;
+  color: white;
+  font-family: monospace;
+  caret-color: cyan;
+  font-size: 1.01vw;
+}
+
+.terminal-input:focus-visible{
+  outline: none;
+
+}
+
+
+.screenfetch-info {
+  color: cyan;
+  font-weight: 900;
+}
+
+
+.origin{
+  position: absolute;
+  bottom:0;
+  right: -.2vw;
+}
+
+
+.footer{
+  height: 15vh;
+  margin-inline: 7vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "SF UI Text Bold", serif;
+  font-size: 1vw;
+  color: white;
+}

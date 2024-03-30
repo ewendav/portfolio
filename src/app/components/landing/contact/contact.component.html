@@ -1,0 +1,93 @@
+<section>
+
+
+  <div class="left flex-row" style="justify-content: end" >
+
+    <div #terminalEl (click)="inputEl.focus()" class="terminal">
+
+      <div class="terminal-header">
+
+        <img class="terminal-ico" src="/assets/imgs/landing/contact/terminal-ico.png" alt="">
+        <p>portfolio&#64;ewen: ~</p>
+
+        <div class="lin-ico">
+          <div class="round"></div>
+          <div class="round"></div>
+
+          <div class="round cross">
+          </div>
+
+        </div>
+
+      </div>
+
+      <div #terminalContentEl class="terminal-content">
+
+        <div class="commande">
+          <p class="prompt">portfolio&#64;ewen:</p>
+          <p>~$</p>
+          <input value="screenfetch" disabled="" class="terminal-input" type="text">
+        </div>
+
+        <div #screenfetchEl class="commande screenfetch">
+
+    <pre>           &#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;
+          &#64;&#64;&#64;&#64;&#64;&#64;   &#64;&#64;&#64;&#64;&#64;&#64;
+         &#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;
+        &#64;&#64;&#64;&#64;&#64;&#64;
+       &#64;&#64;&#64;&#64;&#64;&#64;   &#64;&#64;&#64;&#64;&#64;    &#64;&#64;&#64;
+      &#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;    &#64;&#64;&#64;&#64;&#64;
+                       &#64;&#64;&#64;&#64;&#64;&#64;&#64;
+            &#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;
+           &#64;&#64;&#64;&#64;&#64;&#64;&#64;   &#64;&#64;&#64;&#64;&#64;&#64;&#64;
+          &#64;&#64;&#64;&#64;&#64;&#64;&#64;   &#64;&#64;&#64;&#64;&#64;&#64;&#64;
+         &#64;&#64;&#64;&#64;&#64;&#64;&#64;   &#64;&#64;&#64;&#64;&#64;&#64;&#64;
+        &#64;&#64;&#64;&#64;&#64;&#64;&#64;   &#64;&#64;&#64;&#64;&#64;&#64;&#64;
+       &#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;&#64;
+</pre>
+
+          <pre>        <span class="screenfetch-info">portfolio&#64;ewen</span>
+        <span class="screenfetch-info">Version:</span><span> 2.1</span>
+        <span></span>
+        <span class="screenfetch-info">Browser:</span> <span class="browser">Google Chrome</span>
+        <span class="screenfetch-info">Uptime:</span> <span class="data-chronometer">{{this.chronometerValue}}</span>
+        <span class="screenfetch-info">Shell:</span> <span>Bash 4.4.12</span>
+        <span class="screenfetch-info">Resolution:</span> <span class="screenfetch-reso">{{terminalEl.offsetWidth}}px X {{terminalEl.offsetHeight}}px</span>
+        <span class="screenfetch-info">Logos:</span> <span>Made with Illustrator</span>
+        <span class="screenfetch-info">Font:</span> <span>Monospace</span>
+        <span></span>
+        <span class="screenfetch-info">&#64;mail:</span> <span>ewen.david&#64;protonmail.com</span>
+    </pre>
+        </div>
+
+
+
+      </div>
+      <div style="margin-left: .5vw" >
+
+        <div #promptEl class="commande origin">
+          <p class="prompt">portfolio&#64;ewen:</p>
+          <p>~$</p>
+          <input #inputEl (keyup.enter)="terminalOnSubmit()" autocomplete="off" autocapitalize="off" spellcheck="false" class="terminal-input" type="text">
+          <div class="prompt-cursor" style="display: none;"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+</section>
+
+
+<div class="footer">
+  <p class="ver-name" style="transform: translateY(0px);">
+    Version 1.2.2
+  </p>
+  <p class="mentions">1/?</p>
+  <p class="copyright">Mars 2024</p>
+</div>

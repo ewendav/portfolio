@@ -91,9 +91,9 @@ export class PortfolioItemImgComponent implements  AfterViewInit{
   public itemCLickable : boolean = false
 
   // item open
-  public itemOpen : boolean = false
+  public itemOpenLocal : boolean = false
 
-  constructor(private dataService : SharedEventsService) {
+  constructor(public dataService : SharedEventsService) {
   }
 
   ngAfterViewInit() {
@@ -109,7 +109,8 @@ export class PortfolioItemImgComponent implements  AfterViewInit{
   }
 
   changeImageStatus(show : boolean){
-    if(show){
+
+    if(show && !this.dataService.itemOpen){
       if(this.mouseOver && this.dataService.areAllImgsDown()){
         this.showImage = true
         this.dataService.imageHover(true)
@@ -118,7 +119,7 @@ export class PortfolioItemImgComponent implements  AfterViewInit{
         this.awaitEndAllAnim = true;
       }
     }else{
-      if(!this.mouseOver && this.dataService.areAllAnimationFinish()){
+      if(!this.mouseOver && this.dataService.areAllAnimationFinish() && !this.dataService.itemOpen){
         this.showImage = false
         this.awaitEndAllAnim = false;
       }else {
@@ -142,14 +143,15 @@ export class PortfolioItemImgComponent implements  AfterViewInit{
 
   @HostListener('mouseleave')
   onMouseLeave(){
-    this.mouseOver = false
-    this.dataService.imageHover(false)
-    this.changeImageStatus(false)
+    if(!this.itemOpenLocal){
+      this.mouseOver = false
+      this.dataService.imageHover(false)
+      this.changeImageStatus(false)
+    }
   }
 
   @HostListener('mousedown')
   onMouseup(){
-
     if(this.itemCLickable){
       this.dataService.mouseDown = true;
       this.dataService.mouseUp = false;
@@ -162,11 +164,16 @@ export class PortfolioItemImgComponent implements  AfterViewInit{
       this.dataService.mouseUp = true;
       this.dataService.mouseDown = false;
       this.dataService.changeItemState(this.title, true)
-      this.itemOpen =true;
+      this.dataService.setImageOpen(true)
+      this.itemOpenLocal = true
     }
   }
 
-
+closeItem(){
+  this.dataService.changeItemState(this.title, false)
+  this.dataService.setImageOpen(false)
+  this.itemOpenLocal = false
+}
 
 
 }

@@ -10,11 +10,10 @@ import {LoaderComponent} from "./components/landing/loader/loader.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   animations : [
-    
+
   ]
 })
-export class AppComponent {
-
+export class AppComponent{
 
 
 

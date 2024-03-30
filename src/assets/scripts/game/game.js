@@ -14,8 +14,6 @@ export function startGame(){
   canvas.width='708';
   canvas.height='603';
 
-  console.log(canvas.width, canvas.height)
-
   observerGame.observe(canvas)
   observerBarreGame.observe(canvas)
 }
@@ -148,8 +146,6 @@ class invader {
       this.image = image;
       this.width = image.width * this.scale;
       this.height = image.height * this.scale;
-      if(this.race === "A")
-      console.log(this.width, this.height)
     };
 
     switch (race) {

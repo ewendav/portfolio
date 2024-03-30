@@ -21,6 +21,7 @@ export class SharedEventsService {
 
   public mouseUp : boolean  =false
   public mouseDown : boolean  =false
+  public itemOpen : boolean  =false
 
   setAllItemImg(allItem : QueryList<PortfolioItemImgComponent>){
     this.allItemsImg = allItem;
@@ -45,6 +46,7 @@ export class SharedEventsService {
   areAllAnimationFinish(){
     return !this.allItemsImg.some(img => img.animationRunning)
   }
+
   changeItemState(title : string, state : boolean){
     if(state){
       this.allItemsImg.forEach((item)=>{
@@ -52,16 +54,20 @@ export class SharedEventsService {
           item.itemEl.nativeElement.style.width = '0'
         }else{
           item.itemEl.nativeElement.style.width = '100vw'
+          setTimeout(()=>{
+            this.imageHoverSubj.next(false);
+          },100)
         }
       })
-    }else{
-      this.allItemsImg.forEach((item)=>{
-        item.itemEl.nativeElement.style.width = '25vw'
-
-      })
+    }else {
+          this.allItemsImg.forEach((item)=>{
+            item.itemEl.nativeElement.style.width = '25vw'
+          })
     }
-
   }
 
+  setImageOpen(value : boolean){
+    this.itemOpen = value
+  }
 
 }

@@ -1,6 +1,88 @@
-<div #itemEl class="item">
+<div #itemEl class="item"
+     [style.cursor]="!itemOpenLocal && itemCLickable ? 'pointer' : 'auto'"
+>
   <div class="text-container">
-    <h3 class="title" >{{title}}</h3>
+    <h3 class="title"
+    [class.title-open]="itemOpenLocal"
+    >{{title}}</h3>
+  </div>
+
+  <div [style.opacity]="itemOpenLocal ? 1 : 0" class="close-button"
+       [style.visibility]="itemOpenLocal ? 'visible' : 'hidden'"
+       (click)="closeItem()" >
+    <p><</p>
+  </div>
+
+
+
+  <div class="project"
+       [style.visibility]="itemOpenLocal ? 'visible' : 'hidden'"
+       [style.opacity]="itemOpenLocal ? 1 : 0">
+
+    <div class="project-section">
+      <h4 class="task-title" >TACHES</h4>
+
+      <div class="scroll-container">
+        <div class="task-item flex-row border-top">
+          <label>item</label>
+          <label class="subItem">subItem</label>
+        </div>
+
+        <div class="task-item flex-row">
+          <label>item</label>
+          <label class="subItem">subItem</label>
+
+        </div>
+
+        <div class="task-item flex-row">
+          <label>item</label>
+          <label class="subItem">subItem</label>
+        </div>
+
+        <div class="task-item flex-row">
+          <label>item</label>
+          <label class="subItem">subItem</label>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="project-section">
+      <h4 class="task-title" >DETAILS</h4>
+
+      <div class="scroll-container">
+        <p>oeijzfozeijeiofjz</p>
+        <p>oeijzfozeijeiofjz</p>
+        <p>oeijzfozeijeiofjz</p>
+        <p>oeijzfozeijeiofjz</p>
+        <p>oeijzfozeijeiofjz</p>
+        <p>oeijzfozeijeiofjz</p>
+        <p>oeijzfozeijeiofjz</p>
+        <p>oeijzfozeijeiofjz</p>
+        <h4>header</h4>
+        <p>oeijzfozeijeiofjz</p>
+        <p>oeijzfozeijeiofjz</p>
+        <p>oeijzfozeijeiofjz</p>
+        <p>oeijzfozeijeiofjz</p>
+        <p>oeijzfozeijeiofjz</p>
+        <p>oeijzfozeijeiofjz</p>
+        <p>oeijzfozeijeiofjz</p>
+        <p>oeijzfozeijeiofjz</p>
+      </div>
+
+    </div>
+
+    <div style="border: none" class="project-section">
+      <h4 class="task-title" >VISUEL(S)</h4>
+
+
+      <div class="scroll-container">
+        <img src="/assets/imgs/landing/hero/spacebg.jpg" alt="">
+      </div>
+
+    </div>
+
   </div>
 
   <div class="img-container">
@@ -8,18 +90,18 @@
          [@spacerUp]="showImage"
          class="spacer up"></div>
     <div
-      [class.itemOpen]="itemOpen"
       [@img]="showImage"
       (@img.start)="onAnimationEvent($event)"
       (@img.done)="onAnimationEvent($event)"
-      #img [style]="'background-image:url(' + bcImgSrc + ');'" class="img" ></div>
+      [style.filter]="dataService.itemOpen ? 'brightness(40%)' : 'brightness(100%)'"
+      #img [style]="'background-image:url(' + bcImgSrc + ');'" class="itemImg" >
+    </div>
 
     <div #spacerDown
          [@spacerDown]="showImage"
          class="spacer down"></div>
   </div>
 
-  <app-project *ngIf="true"></app-project>
 
 
 </div>

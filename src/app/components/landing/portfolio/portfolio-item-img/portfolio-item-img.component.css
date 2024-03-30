@@ -1,8 +1,10 @@
 
 .item{
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: end;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+
   position: relative;
   width: 25vw;
   height: 100%;
@@ -21,15 +23,23 @@
   left: 0;
   padding: 3vw;
   z-index: 100;
+  width: 100%;
 }
 
 .title{
   font-family: "SF Thin", serif;
   font-size: 3vw;
-  color: white;
+  color: antiquewhite;
   width: 2vw;
-  opacity: 0;
+  transition: font-size 1s,  padding-top 1s;
+  text-align: start;
 }
+
+.title-open{
+  font-size: 5vw;
+  padding-top: .5vw;
+}
+
 
 /* imgs */
 
@@ -57,7 +67,7 @@
 }
 
 
-.img{
+.itemImg{
   width: 105vw;
   height: 0;
   content: '';
@@ -65,7 +75,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: contain;
-  transition: height 600ms ease-in-out;
+  transition: height 600ms ease-in-out, filter 1s;
+  will-change: height;
 }
 
 .showTitles{
@@ -82,3 +93,123 @@
     transform: translateY(0vw);
   }
 }
+
+
+.project{
+  margin-top: 5vw;
+  border: 1px white solid;
+  border-inline: none;
+  width: 90vw;
+  height: 70vh;
+  z-index: 10;
+  position: relative;
+
+  display: grid;
+  grid-template-columns: .25fr .31fr .45fr;
+  align-items: center;
+  transition: opacity 1500ms, visibility 1s;
+  opacity: 0;
+}
+
+.project > div{
+  height: 80%;
+}
+
+.project-section{
+  border: 1px none white;
+  border-right-style: solid;
+  padding-inline: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.task-title{
+  font-family: "SF UI Text Bold", serif;
+  text-transform: capitalize;
+  font-size: 2vw;
+  color: rgba(250, 235, 215, 0.76);
+  padding-bottom:1vw
+}
+
+.task-item{
+  gap: 1vw;
+}
+
+.subItem{
+  font-family: "SF Light", serif;
+}
+.task-item{
+  cursor:pointer;
+  border: 1px white solid;
+  font-family: "SF UI Text Bold", serif;
+  text-transform: capitalize;
+  color: antiquewhite;
+
+  font-size: 1.5vw;
+  border-inline: none;
+  border-top: none;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  width: 90%;
+  justify-content: space-between;
+  padding-inline: .5vw;
+}
+
+label{
+  cursor: pointer;
+}
+
+.border-top{
+  border-top: 1px white solid;
+
+}
+
+.scroll-container{
+  width: 100%;
+  height: 50vh;
+  overflow: scroll;
+  position: relative;
+}
+
+
+.scroll-container > h4{
+  font-family: "SF UI Text Bold", serif;
+  text-transform: capitalize;
+  font-size: 2vw;
+  color: antiquewhite;
+  padding-bottom:1vw  ;
+}
+
+
+.scroll-container > p{
+  font-family: "SF UI Text Regular", serif;
+  font-size: 1.5vw;
+  color: antiquewhite;
+  padding-bottom:1vw  ;
+}
+
+.scroll-container > img{
+  width: 100%;
+  height: auto;
+  border-radius: 10%;
+}
+
+.close-button{
+  font-family: "SF UI Text Bold", sans-serif;
+  position: absolute;
+  top: 2vw;
+  left: 1vw;
+  color: rgba(250, 235, 215, 0.76);
+  font-size: 5vw;
+  z-index: 10;
+  border-radius: 0 10% 10% 0;
+  text-align: center;
+  padding-bottom: .2vw;
+  cursor: pointer;
+  transition: opacity 1s 1s;
+  opacity: 0;
+}
+
+

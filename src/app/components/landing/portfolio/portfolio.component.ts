@@ -62,8 +62,6 @@ export class PortfolioComponent implements AfterViewInit, OnDestroy{
         }
       })
     }, {threshold: .90})
-
-
     if(this.el){
       this.observerH3.observe(this.el.nativeElement)
     }
